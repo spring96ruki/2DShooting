@@ -23,10 +23,6 @@ public class StringController{
         {
             return _xAxisName;
         }
-        set
-        {
-            _xAxisName = value;
-        }
     }
 
     string _yAxisName = "Vertical";
@@ -36,21 +32,14 @@ public class StringController{
         {
             return _yAxisName;
         }
-        set
-        {
-            _yAxisName = value;
-        }
     }
 
-    string _playerBullet = "PlayerBullet";
-    public string PlayeBullet
+    string _playeBullet = "PlayerBullet";
+    public string PlayerBullet
     {
-        get        {
-            return _playerBullet;
-        }
-        set
+        get
         {
-            _playerBullet = value;
+            return _playeBullet;
         }
     }
 
@@ -61,10 +50,6 @@ public class StringController{
         {
             return _enemyBullet;
         }
-        set
-        {
-            _enemyBullet = value;
-        }
     }
 
     string _destroyArea = "DestroyArea";
@@ -73,10 +58,6 @@ public class StringController{
         get
         {
             return _destroyArea;
-        }
-        set
-        {
-            _destroyArea = value;
         }
     }
 
@@ -87,10 +68,6 @@ public class StringController{
         {
             return _backGroundFront;
         }
-        set
-        {
-            _backGroundFront = value;
-        }
     }
 
     string _backGroundMiddle = "background_middle";
@@ -99,10 +76,6 @@ public class StringController{
         get
         {
             return _backGroundMiddle;
-        }
-        set
-        {
-            _backGroundMiddle = value;
         }
     }
 
@@ -113,9 +86,50 @@ public class StringController{
         {
             return _backGroundBack;
         }
-        set
+    }
+
+    string _enemy1 = "Enemy1";
+    public string Enemy1
+    {
+        get
         {
-            _backGroundBack = value;
+            return _enemy1;
+        }
+    }
+
+    string _enemy2 = "Enemy2";
+    public string Enemy2
+    {
+        get
+        {
+            return _enemy2;
+        }
+    }
+
+    string _enemy3 = "Enemy3";
+    public string Enemy3
+    {
+        get
+        {
+            return _enemy3;
+        }
+    }
+
+    string _enemy4 = "Enemy4";
+    public string Enemy4
+    {
+        get
+        {
+            return _enemy4;
+        }
+    }
+
+    string _enemy5 = "Enemy5";
+    public string Enemy5
+    {
+        get
+        {
+            return _enemy5;
         }
     }
 

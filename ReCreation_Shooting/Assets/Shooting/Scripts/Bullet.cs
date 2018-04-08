@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rgd2D = GetComponent<Rigidbody2D>();
-        if (gameObject.tag == StringController.Name.PlayeBullet) {
+        if (gameObject.tag == StringController.Name.PlayerBullet) {
             rgd2D.velocity = transform.up.normalized * BulletSpeed;
         } else if (gameObject.tag == StringController.Name.EnemyBullet) {
             rgd2D.velocity = transform.up.normalized * EnemyBulletSpeed;
