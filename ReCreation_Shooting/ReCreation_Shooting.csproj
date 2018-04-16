@@ -298,6 +298,7 @@
     <Compile Include="Assets\Shooting\Scripts\BackGrounds.cs" />
     <Compile Include="Assets\Shooting\Scripts\Bullet.cs" />
     <Compile Include="Assets\Shooting\Scripts\BulletPool.cs" />
+    <Compile Include="Assets\Shooting\Scripts\CreateObject.cs" />
     <Compile Include="Assets\Shooting\Scripts\DisAppear.cs" />
     <Compile Include="Assets\Shooting\Scripts\Enemy.cs" />
     <Compile Include="Assets\Shooting\Scripts\Explosion.cs" />
@@ -308,6 +309,7 @@
     <Compile Include="Assets\Shooting\Scripts\ScreenManager.cs" />
     <Compile Include="Assets\Shooting\Scripts\SingletonMono.cs" />
     <Compile Include="Assets\Shooting\Scripts\StringController.cs" />
+    <Compile Include="Assets\Shooting\Scripts\TagController.cs" />
     <Compile Include="Assets\Shooting\Scripts\WaveController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

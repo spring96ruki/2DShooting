@@ -41,6 +41,11 @@ public class WaveController : MonoBehaviour {
     WaveState m_state;
     public WaveState m_waveState { get { return m_state; } set { m_state = value; } }
 
+    private void Awake()
+    {
+        GameManager.Instance.InitBool(waveBool);
+    }
+
     private void Start()
     {
         m_state = WaveState.wave1;
@@ -73,7 +78,7 @@ public class WaveController : MonoBehaviour {
                 DisAppear.Instance.JudgeEnemyBool(waveNumber.isWave5, WaveState.wave5);
                 break;
             case WaveState.wave5:
-                
+
                 break;
         }
     }

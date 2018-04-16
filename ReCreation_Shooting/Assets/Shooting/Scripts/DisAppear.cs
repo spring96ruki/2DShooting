@@ -26,6 +26,12 @@ public class DisAppear : MonoBehaviour {
     public EnemyNumber enemyNumber;
     List<bool> EnemyBool = new List<bool>();
 
+    private void Awake()
+    {
+        AddListEnemyBool();
+        GameManager.Instance.InitBool(EnemyBool);
+    }
+
     public void AddListEnemyBool()
     {
         EnemyBool.Add(enemyNumber.Enemy1);
@@ -36,15 +42,6 @@ public class DisAppear : MonoBehaviour {
 
     }
 
-    public void InitEnemyBool()
-    {
-        enemyNumber.Enemy1 = false;
-        enemyNumber.Enemy2 = false;
-        enemyNumber.Enemy3 = false;
-        enemyNumber.Enemy4 = false;
-        enemyNumber.Enemy5 = false;
-    }
-
     public void JudgeEnemyBool(bool isWave, WaveState wave)
     {
         for (int i = 0; i < EnemyBool.Count; ++i)
@@ -52,7 +49,7 @@ public class DisAppear : MonoBehaviour {
             if (EnemyBool[i] == true)
             {
                 isWave = true;
-                InitEnemyBool();
+                GameManager.Instance.InitBool(EnemyBool);
                 WaveController.Instance.m_waveState = wave;
             }
         }

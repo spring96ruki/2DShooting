@@ -6,6 +6,7 @@ public class GameManager : SingletonMono<GameManager> {
 
     public GameObject EnemyObject;
     public GameObject SpawnArea;
+    public List<string> EnemyTag = new List<string>();
 
     float SpawnAreaPosX;
     float SpawnAreaPosY;
@@ -16,11 +17,22 @@ public class GameManager : SingletonMono<GameManager> {
 
     Vector3[] SpawnAreaPosArray = new Vector3[5];
     float[] WaveCountBorder = new float[5];
+    List<bool> wasWaveList = new List<bool>();
+
+    public struct WasWaveNumber
+    {
+        public bool wasWave1;
+        public bool wasWave2;
+        public bool wasWave3;
+        public bool wasWave4;
+        public bool wasWave5;
+    }
+
+    public WasWaveNumber wasWaveNumber; 
 
     void Awake()
     {
-        DisAppear.Instance.AddListEnemyBool();
-        DisAppear.Instance.InitEnemyBool();
+        InitBool(wasWaveList);
     }
 
     // Use this for initialization
@@ -42,9 +54,31 @@ public class GameManager : SingletonMono<GameManager> {
         wave5(EnemyObject);
     }
 
+    void AddListwasWave() {
+        wasWaveList.Add(wasWaveNumber.wasWave1);
+        wasWaveList.Add(wasWaveNumber.wasWave2);
+        wasWaveList.Add(wasWaveNumber.wasWave3);
+        wasWaveList.Add(wasWaveNumber.wasWave4);
+        wasWaveList.Add(wasWaveNumber.wasWave5);
+    }
+
+    void AddListEnemyTag()
+    {
+        EnemyTag.Add(StringController.Name.Enemy1);
+        EnemyTag.Add(StringController.Name.Enemy2);
+        EnemyTag.Add(StringController.Name.Enemy3);
+    }
+
+    public void InitBool(List<bool> list)
+    {
+        for (int i = 0; i < list.Count; ++i) {
+            list[i] = false;
+        }
+    }
+
     void wave1(GameObject enemy){
         if (EnemyCount < WaveCountBorder[0] || WaveController.Instance.waveNumber.isWave1 == false) {
-            for (int i = 0; i < 3; ++i){
+            for (int i = 0; i < EnemyTag.Count; ++i){
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
             Debug.Log("kon");
