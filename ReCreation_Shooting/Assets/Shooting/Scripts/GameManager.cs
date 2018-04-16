@@ -33,6 +33,8 @@ public class GameManager : SingletonMono<GameManager> {
     void Awake()
     {
         InitBool(wasWaveList);
+        AddListEnemyTag();
+        AddListwasWave();
     }
 
     // Use this for initialization
@@ -77,47 +79,52 @@ public class GameManager : SingletonMono<GameManager> {
     }
 
     void wave1(GameObject enemy){
-        if (EnemyCount < WaveCountBorder[0] || WaveController.Instance.waveNumber.isWave1 == false) {
+        if (EnemyCount < WaveCountBorder[0] && wasWaveNumber.wasWave1 == false) {
             for (int i = 0; i < EnemyTag.Count; ++i){
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
+            wasWaveNumber.wasWave1 = true;
             Debug.Log("kon");
         }
 
     }
 
     void wave2(GameObject enemy) {
-        if (EnemyCount < WaveCountBorder[1] || WaveController.Instance.waveNumber.isWave2 == false) {
+        if (EnemyCount < WaveCountBorder[1] && wasWaveNumber.wasWave2 == false) {
             for (int i = 0; i < 3; ++i) {
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
+            wasWaveNumber.wasWave2 = true;
             Debug.Log("wan");
         }
     }
 
     void wave3(GameObject enemy) {
-        if (EnemyCount < WaveCountBorder[2] || WaveController.Instance.waveNumber.isWave3 == false) {
+        if (EnemyCount < WaveCountBorder[2] && wasWaveNumber.wasWave3 == false) {
             for (int i = 0; i < 3; ++i) {
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
+            wasWaveNumber.wasWave3 = true;
             Debug.Log("nyan");
         }
     }
 
     void wave4(GameObject enemy) {
-        if (EnemyCount < WaveCountBorder[3] || WaveController.Instance.waveNumber.isWave4== false) {
+        if (EnemyCount < WaveCountBorder[3] && wasWaveNumber.wasWave4 == false) {
             for (int i = 0; i < 3; ++i) {
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
+            wasWaveNumber.wasWave4 = true;
             Debug.Log("ton");
         }
     }
 
     void wave5(GameObject enemy)  {
-        if (EnemyCount < WaveCountBorder[4] || WaveController.Instance.waveNumber.isWave5 == false) {
+        if (EnemyCount < WaveCountBorder[4] && wasWaveNumber.wasWave5 == false) {
             for (int i = 0; i < 3; ++i) {
                 Instantiate(enemy, SpawnAreaPosArray[i], enemy.transform.rotation);
             }
+            wasWaveNumber.wasWave5 = true;
             Debug.Log("toy");
         }
     }

@@ -20,6 +20,5 @@ public class CreateObject : MonoBehaviour {
     public void Create(GameObject gameItem , Vector3 position, Quaternion rotation)
     {
         Instantiate(gameItem, position, rotation);
-        GameManager.Instance.
     }
 }
