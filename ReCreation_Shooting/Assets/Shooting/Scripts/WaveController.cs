@@ -36,7 +36,9 @@ public class WaveController : MonoBehaviour {
     }
 
     public WaveNumber waveNumber;
+
     List<bool> waveBool = new List<bool>();
+    Enemy enemyManager;
 
     WaveState m_state;
     public WaveState m_waveState { get { return m_state; } set { m_state = value; } }
@@ -66,16 +68,16 @@ public class WaveController : MonoBehaviour {
         switch (m_waveState)
         {
             case WaveState.wave1:
-                DisAppear.Instance.JudgeEnemyBool(waveNumber.isWave2, WaveState.wave2);
+                GameManager.Instance.JudgeEnemyBool(waveNumber.isWave2, enemyManager.EnemyBool , WaveState.wave2);
                 break;
             case WaveState.wave2:
-                DisAppear.Instance.JudgeEnemyBool(waveNumber.isWave3, WaveState.wave3);
+                GameManager.Instance.JudgeEnemyBool(waveNumber.isWave3, enemyManager.EnemyBool , WaveState.wave3);
                 break;
             case WaveState.wave3:
-                DisAppear.Instance.JudgeEnemyBool(waveNumber.isWave4, WaveState.wave4);
+                GameManager.Instance.JudgeEnemyBool(waveNumber.isWave4, enemyManager.EnemyBool , WaveState.wave4);
                 break;
             case WaveState.wave4:
-                DisAppear.Instance.JudgeEnemyBool(waveNumber.isWave5, WaveState.wave5);
+                GameManager.Instance.JudgeEnemyBool(waveNumber.isWave5, enemyManager.EnemyBool , WaveState.wave5);
                 break;
             case WaveState.wave5:
 

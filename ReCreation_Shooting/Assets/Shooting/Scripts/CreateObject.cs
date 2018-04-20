@@ -20,5 +20,11 @@ public class CreateObject : MonoBehaviour {
     public void Create(GameObject gameItem , Vector3 position, Quaternion rotation)
     {
         Instantiate(gameItem, position, rotation);
+        AddGameObjectTag(gameItem);
+    }
+
+    void AddGameObjectTag(GameObject enemyObject)
+    {
+        enemyObject.tag = StringController.Name.Enemy1;
     }
 }

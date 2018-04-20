@@ -78,6 +78,19 @@ public class GameManager : SingletonMono<GameManager> {
         }
     }
 
+    public void JudgeEnemyBool(bool isWave, List<bool> list , WaveState wave)
+    {
+        for (int i = 0; i < list.Count; ++i)
+        {
+            if (list[i] == true)
+            {
+                isWave = true;
+            }
+        }
+        InitBool(list);
+        WaveController.Instance.m_waveState = wave;
+    }
+
     void wave1(GameObject enemy){
         if (EnemyCount < WaveCountBorder[0] && wasWaveNumber.wasWave1 == false) {
             for (int i = 0; i < EnemyTag.Count; ++i){
